@@ -10,11 +10,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Email Form</title>
 </head>
 
 <body>
-    <h1>Hello, world!</h1>
+    <h1>Email Form!</h1>
 
     <form>
         Your name <input type="text" name="custName" id="custName"><br>
@@ -23,26 +23,7 @@
     </form>
 
 
-    <script src="https://smtpjs.com/v3/smtp.js">
-    </script>
-
-    <script>
-        function sendMail() {
-            var custName = document.getElementById("custName").value;
-
-            Email.send({
-                Host: "smtp.elasticemail.com",
-                Username: "cottrell.lee@ptcollege.edu",
-                Password: "5cf1cbdc-3e3e-4c85-b38e-e26ac4b501f1",
-                To: 'cottrell.lee@ptcollege.edu',
-                From: "cottrell.lee@ptcollege.edu",
-                Subject: "Form Data",
-                Body: "Customer name: " + custName;
-            }).then(
-                message => alert(message)
-            );
-        }
-    </script>
+    
 
 
     <!-- Optional JavaScript -->
@@ -57,24 +38,26 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
-    <script src="https://smtpjs.com/v3/smtp.js">
-    </script>
-
-    <script>
-        function sendMail() {
-            Email.send({
-                Host: "smtp.elasticemail.com",
-                Username: "cottrell.lee@ptcollege.edu",
-                Password: "5cf1cbdc-3e3e-4c85-b38e-e26ac4b501f1",
-                To: 'cottrell.lee@ptcollege.edu',
-                From: "cottrell.lee@ptcollege.edu",
-                Subject: "This is the subject",
-                Body: "And this is the body. Need to send JavaScript information into the form"
-            }).then(
-                message => alert(message)
-            );
-        }
-    </script>
+        <script src="https://smtpjs.com/v3/smtp.js">
+        </script>
+    
+        <script>
+            function sendMail() {
+                var custName = document.getElementById("custName").value;
+    
+                Email.send({
+                    Host: "smtp.elasticemail.com",
+                    Username: "cottrell.lee@ptcollege.edu",
+                    Password: "your password from elastic email",
+                    To: 'cottrell.lee@ptcollege.edu',
+                    From: "cottrell.lee@ptcollege.edu",
+                    Subject: "Form Data",
+                    Body: "Customer name: " + custName
+                }).then(
+                    message => alert(message)
+                );
+            }
+        </script>
 </body>
 
 </html>
